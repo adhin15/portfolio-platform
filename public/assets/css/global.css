@@ -1,0 +1,210 @@
+@font-face {
+  font-family: Monserrat;
+  src: url("../fonts/montserrat/Montserrat-Regular.ttf");
+}
+
+@font-face {
+  font-family: Monserrat-Bold;
+  src: url("../fonts/montserrat/Montserrat-Bold.ttf");
+}
+
+@font-face {
+  font-family: Monserrat-Medium;
+  src: url("../fonts//montserrat/Montserrat-Medium.ttf");
+}
+
+body {
+  font-family: Monserrat-Medium;
+  --bg: hsl(190deg 20% 10%);
+  color: var(--color);
+  background: var(--background-color);
+  overflow-x: hidden;
+}
+
+.scroller {
+  /* max-width: 600px; */
+}
+
+.scroller__inner {
+  padding-block: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.scroller[data-animated="true"] {
+  overflow: hidden;
+  -webkit-mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+  mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+}
+
+.scroller[data-animated="true"] .scroller__inner {
+  width: max-content;
+  flex-wrap: nowrap;
+  animation: scroll var(--_animation-duration, 40s) var(--_animation-direction, forwards) linear infinite;
+}
+
+.scroller[data-direction="right"] {
+  --_animation-direction: reverse;
+}
+
+.scroller[data-direction="left"] {
+  --_animation-direction: forwards;
+}
+
+.scroller[data-speed="fast"] {
+  --_animation-duration: 20s;
+}
+
+.scroller[data-speed="slow"] {
+  --_animation-duration: 180s;
+}
+
+@keyframes scroll {
+  to {
+    transform: translate(calc(-50% - 0.5rem));
+  }
+}
+
+.tag-list {
+  margin: 0;
+  padding-inline: 0;
+  list-style: none;
+}
+
+.tag-list li {
+  padding: 1rem;
+  /* background: var(--clr-primary-400); */
+  border-radius: 0.5rem;
+  margin-right: 16px;
+  font-weight: bold;
+}
+
+.move-animation {
+  animation-name: move;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes move {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+    height: 0;
+  }
+
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+
+
+.box {
+  --border-angle: 0deg;
+  border-radius: 999px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 2px 4px hsl(0 0% 0% / 25%);
+  animation: border-angle-rotate 2s infinite linear;
+  border: 0.2rem solid transparent;
+  position: relative;
+}
+
+@keyframes border-angle-rotate {
+  from {
+    --border-angle: 0deg;
+  }
+
+  to {
+    --border-angle: 360deg;
+  }
+}
+
+
+
+@property --border-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+    height: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.slide-in {
+  animation-name: move;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.typewriter {
+  color: transparent;
+  background:
+    linear-gradient(-90deg, #00DFFC 5px, #0000 0) 10px 0,
+    linear-gradient(#fff 0 0) 0 0;
+  background-size: calc(var(--n)*1ch) 200%;
+  -webkit-background-clip: padding-box, text;
+  background-clip: padding-box, text;
+  background-repeat: no-repeat;
+  animation:
+    b .4s infinite steps(1),
+    t calc(var(--n)*.05s) infinite steps(var(--n)) forwards;
+}
+
+@keyframes t {
+  from {
+    background-size: 0 200%
+  }
+}
+
+@keyframes b {
+  50% {
+    background-position: 0 -100%, 0 0
+  }
+}
+
+.gradient-fornt {
+  background: linear-gradient(yellow, #04D9FF);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes change-color {
+  0% {
+    color: cyan;
+  }
+
+  25% {
+    color: magenta;
+  }
+
+  50% {
+    color: yellow;
+  }
+
+  100% {
+    color: black;
+  }
+}
+
+.blinking-font {
+  height: 100px;
+  animation-iteration-count: infinite;
+  animation-name: change-color;
+  animation-duration: 5s;
+}
