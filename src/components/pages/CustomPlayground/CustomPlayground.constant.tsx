@@ -316,7 +316,6 @@ const ChartComponent = (ColorProps: any) => {
 const BlockColors = (ColorProps: any) => {
   const { colorTheme } = ColorProps;
   const iteration = 16;
-  console.log("log color props", ColorProps);
   return (
     <>
       {[...Array(iteration)].map((_, index) => {

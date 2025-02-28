@@ -7,7 +7,7 @@ export const viewport: Viewport = {
   userScalable: false,
 };
 export const metadata: Metadata = {
-  title: "Adhin Alifarchan - Movie Database",
+  title: "Adhin Alifarchan",
   description:
     "Welcome to my portfolio, where you can explore my work across private and formal projects. Dive into detailed case studies, project highlights, and ongoing creations. There's also an exciting feature I'm currently building that you won't want to miss!",
   icons: "https://mo-flixx.vercel.app/assets/logo/main-logo-black.png",

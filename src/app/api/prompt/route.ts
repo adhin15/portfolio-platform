@@ -43,7 +43,6 @@ export async function POST(request:NextRequest) {
   }
 
   await prompting(payload).then((val)=>{
-    console.log('log BE',val)
     response = val?.candidates?.[0]?.content?.parts?.[0]?.text;
   })
     return NextResponse.json(response, { status: 200 });
