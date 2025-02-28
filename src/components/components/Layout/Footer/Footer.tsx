@@ -1,9 +1,8 @@
-import { FooterItems } from "@/components/constant/constant";
 import { useAppContext } from "../Context";
 
 const Footer = () => {
   const contextValue = useAppContext();
-  const { colorTheme } = contextValue || {};
+
   return (
     <div className="relative bottom-0 py-4">
       <p className="text-center text-xs opacity-50">
