@@ -19,9 +19,12 @@ const Navbar = () => {
       setScrolled(false);
     }
   };
-  if (typeof window !== "undefined") {
-    window.addEventListener("scroll", handleScroll);
-  }
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", handleScroll);
+    }
+  }, []);
 
   return (
     <>
@@ -42,7 +45,7 @@ const Navbar = () => {
             type="button"
             className="cursor-pointer h-full"
           >
-            <img src="/assets/logo/main-logo-neon.png" className="h-16" />
+            <img src="/assets/logo/main-logo-white.png" className="h-16" />
           </button>
         </div>
         <div className="flex justify-center gap-4 ">

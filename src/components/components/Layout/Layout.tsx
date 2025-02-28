@@ -6,11 +6,7 @@ import { AppContext } from "@/components/components/Layout/Context";
 import { useMemo, useState } from "react";
 import { colorPalette3 } from "@/components/constant/constant";
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   const defaultTheme = { color: ["#0D1F2D", "#1d2e3d", "#0D6E6E", "#4a9d9c", "#FF3D3D", "#FFFFFF"] };
   const [state, setState] = useState<any>(defaultTheme);
 
