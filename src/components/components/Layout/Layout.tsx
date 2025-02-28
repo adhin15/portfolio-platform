@@ -3,7 +3,7 @@ import "../../../app/globals.css";
 import Navbar from "@/components/components/Layout/Navbar/Navbar";
 import Footer from "@/components/components/Layout/Footer/Footer";
 import { AppContext } from "@/components/components/Layout/Context";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { colorPalette3 } from "@/components/constant/constant";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -23,6 +23,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       secondary: state?.color?.[4],
       secondaryAccent: state?.color?.[3],
     };
+  }, [state]);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      if (sessionStorage.getItem("theme")) {
+        setState(JSON.parse(sessionStorage.getItem("theme")));
+      }
+    }
+  }, []);
+
+  useEffect(() => {
+    if (typeof window !== "undefined" && state) {
+      if (sessionStorage.getItem("theme") !== state) sessionStorage.setItem("theme", JSON.stringify(state));
+    }
   }, [state]);
 
   const value = {

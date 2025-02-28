@@ -10,7 +10,7 @@ const Circles = () => {
     <div className="main-container" id="circle container">
       <div className={`logo-container ${active ? "active" : ""}`}>
         <div className="main-logo text-center" style={{ borderColor: colorTheme?.secondaryBg }}>
-          <div className="h-full">
+          <div className="h-full relative">
             <Image
               src="/assets/logo/skill-logo.png"
               onClick={() => {
@@ -18,6 +18,7 @@ const Circles = () => {
               }}
               style={{ width: "100%" }}
               fill
+              sizes="100%"
               alt=""
             />
           </div>
@@ -31,28 +32,28 @@ const Circles = () => {
           </h3>
         </div>
         <div className="item-logo-1" style={{ borderColor: colorTheme?.secondary }}>
-          <Image src="/assets/logo/html-logo.png" style={{ width: "100%" }} fill alt="" />
+          <Image src="/assets/logo/html-logo.png" style={{ width: "100%" }} fill sizes="100%" alt="" />
         </div>
         <div className="item-logo-2" style={{ borderColor: colorTheme?.secondary }}>
-          <Image src="/assets/logo/css-logo.png" style={{ width: "100%" }} fill alt="" />
+          <Image src="/assets/logo/css-logo.png" style={{ width: "100%" }} fill sizes="100%" alt="" />
         </div>
         <div className="item-logo-3" style={{ borderColor: colorTheme?.secondary }}>
-          <Image src="/assets/logo/js-logo.png" style={{ width: "100%" }} fill alt="" />
+          <Image src="/assets/logo/js-logo.png" style={{ width: "100%" }} fill sizes="100%" alt="" />
         </div>
         <div className="item-logo-4" style={{ borderColor: colorTheme?.secondary }}>
-          <Image src="/assets/logo/react-logo.png" style={{ width: "100%" }} fill alt="" />
+          <Image src="/assets/logo/react-logo.png" style={{ width: "100%" }} fill sizes="100%" alt="" />
         </div>
         <div className="item-logo-5" style={{ borderColor: colorTheme?.secondary }}>
-          <Image src="/assets/logo/github-logo.png" style={{ width: "100%" }} fill alt="" />
+          <Image src="/assets/logo/github-logo.png" style={{ width: "100%" }} fill sizes="100%" alt="" />
         </div>
         <div className="item-logo-6" style={{ borderColor: colorTheme?.secondary }}>
-          <Image src="/assets/logo/nextjs-logo.png" style={{ width: "100%" }} fill alt="" />
+          <Image src="/assets/logo/nextjs-logo.png" style={{ width: "100%" }} fill sizes="100%" alt="" />
         </div>
         <div className="item-logo-7" style={{ borderColor: colorTheme?.secondary }}>
-          <Image src="/assets/logo/typescript-logo.png" style={{ width: "100%" }} fill alt="" />
+          <Image src="/assets/logo/typescript-logo.png" style={{ width: "100%" }} fill sizes="100%" alt="" />
         </div>
         <div className="item-logo-8" style={{ borderColor: colorTheme?.secondary }}>
-          <Image src="/assets/logo/vscode-logo.png" style={{ width: "100%" }} fill alt="" />
+          <Image src="/assets/logo/vscode-logo.png" style={{ width: "100%" }} fill sizes="100%" alt="" />
         </div>
       </div>
     </div>

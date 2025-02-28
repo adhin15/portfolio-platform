@@ -26,7 +26,12 @@ const AboutMe = () => {
                   color: colorTheme?.secondary,
                 }}
               >
-                <a href="https://wa.me/6281343042162" target="_blank" rel="noreferrer">
+                <a
+                  href="https://wa.me/6281343042162"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Links to my Whatsapp"
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -45,7 +50,7 @@ const AboutMe = () => {
                   color: colorTheme?.secondary,
                 }}
               >
-                <a href="mailto:adhin.alifarchan@gmail.com">
+                <a href="mailto:adhin.alifarchan@gmail.com" aria-label="Links to my Email">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -64,7 +69,12 @@ const AboutMe = () => {
                   color: colorTheme?.secondary,
                 }}
               >
-                <a href="https://www.linkedin.com/in/adhin-alifarchan/" target="_blank" rel="noreferrer">
+                <a
+                  href="https://www.linkedin.com/in/adhin-alifarchan/"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Links to my Linkedin"
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
