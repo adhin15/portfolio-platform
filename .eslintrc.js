@@ -6,14 +6,7 @@ module.exports = {
   env: {
     es6: true,
   },
-  extends: [
-    "next/core-web-vitals",
-    "plugin:react/recommended",
-    "plugin:storybook/recommended",
-    "plugin:import/recommended",
-    "plugin:import/errors",
-    "plugin:import/warnings",
-  ],
+  extends: [],
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
