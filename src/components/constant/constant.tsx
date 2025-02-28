@@ -8,14 +8,19 @@ export const NavbarItems = [
   {
     label: "About Me",
     url: "#about-me-section",
+    type: "anchor",
+    page: "/",
   },
   {
     label: "My Portfolio",
     url: "#portfolio-section",
+    type: "anchor",
+    page: "/",
   },
   {
     label: "Cuztomize Theme",
     url: "/cuztomize-theme",
+    type: "navigation",
   },
 ];
 

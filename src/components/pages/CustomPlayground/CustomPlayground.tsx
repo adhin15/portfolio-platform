@@ -12,6 +12,7 @@ import {
   SendIcon,
   WalletIcon,
 } from "./CustomPlayground.constant";
+import Image from "next/image";
 
 const CustomPlayground = (props: any) => {
   const { colorList } = props;
@@ -64,7 +65,9 @@ const CustomPlayground = (props: any) => {
         <div className="hidden md:block md:w-[20%] border-r-[2px] h-full relative p-12">
           <div className="flex flex-col items-center h-full">
             <div className="text-center">
-              <img src="./assets/images/avatar-blank.jpg" className="rounded-full w-[80px] h-[80px] object-cover" />
+              <div className=" w-[80px] h-[80px] relative">
+                <Image src="/assets/images/avatar-blank.jpg" fill className="rounded-full object-cover" alt="" />
+              </div>
               <h4 className="text-xl font-bold">John Doe</h4>
               <span className={`text-md`}>Designer</span>
             </div>

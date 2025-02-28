@@ -1,5 +1,7 @@
 import { useAppContext } from "@/components/components/Layout/Context";
 import Button from "@/components/shared/Button";
+import ImageContainer from "@/components/shared/ImageContainer/ImageContainer";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 const PlayGround = () => {
@@ -31,9 +33,7 @@ const PlayGround = () => {
         </div>
 
         <div className="lg:w-1/3 w-full text-center p-4 ">
-          <div className="">
-            <img src="./assets/images/ai-development.png" className="h-[280px] m-auto object-cover" alt="" />
-          </div>
+          <ImageContainer src="/assets/images/ai-development.png" height={280} alt="" />
         </div>
         <div>
           <Button

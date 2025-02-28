@@ -3,12 +3,15 @@ import { useAppContext } from "../Context";
 import { NavbarItems } from "@/components/constant/constant";
 import { NavbarItemType } from "@/components/constant/types";
 import { useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
+import ImageContainer from "@/components/shared/ImageContainer/ImageContainer";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const contextValue = useAppContext();
   const { colorTheme } = contextValue || {};
   const router = useRouter();
+  const pathname = usePathname();
 
   const handleScroll = () => {
     const offset = window.scrollY;
@@ -37,40 +40,58 @@ const Navbar = () => {
           background: !scrolled ? "transparent" : colorTheme?.main,
         }}
       >
-        <div id="container-image">
+        <div id="container-image" className="h-full">
           <button
             onClick={() => {
               router.push("/");
             }}
             type="button"
-            className="cursor-pointer h-full"
+            className="cursor-pointer h-full h-16 w-16 relative"
           >
-            <img src="/assets/logo/main-logo-white.png" className="h-16" />
+            <ImageContainer src="/assets/logo/main-logo-white.png" alt="" />
           </button>
         </div>
         <div className="flex justify-center gap-4 ">
           {NavbarItems?.map((value: NavbarItemType, index: number) => {
             return (
-              <a
-                href={value.url}
-                className={`cursor-pointer ${
-                  scrolled ? `text-[${colorTheme?.secondary}]` : `text-[${colorTheme?.fontColor}]`
-                } font-bold`}
-                key={index}
-              >
-                {value.label}
-              </a>
+              <div key={index}>
+                {value?.type === "anchor" ? (
+                  value?.page === pathname && (
+                    <a
+                      href={value.url}
+                      className={`cursor-pointer ${
+                        scrolled ? `text-[${colorTheme?.secondary}]` : `text-[${colorTheme?.fontColor}]`
+                      } font-bold`}
+                      key={index}
+                    >
+                      {value.label}
+                    </a>
+                  )
+                ) : (
+                  <button
+                    onClick={() => {
+                      router.push(value?.url);
+                    }}
+                    type="button"
+                    className={`cursor-pointer ${
+                      scrolled ? `text-[${colorTheme?.secondary}]` : `text-[${colorTheme?.fontColor}]`
+                    } font-bold`}
+                  >
+                    {value?.label}
+                  </button>
+                )}
+              </div>
             );
           })}
         </div>
       </div>
       <div
-        className={`md:hidden max-w-full px-12 py-2 h-[80px] w-full flex-wrap fixed top-0 z-30`}
+        className={`md:hidden max-w-full px-4 md:px-12 py-2 h-[80px] w-full flex-wrap fixed top-0 z-30`}
         style={{ background: colorTheme?.main }}
       >
-        <div id="container-image" className="">
-          <a href={"/"} type="button" className="cursor-pointer h-full">
-            <img src="/assets/logo/main-logo-neon.png" className="h-16" />
+        <div id="container-image" className="h-full relative">
+          <a href={"/"} type="button" className="cursor-pointer h-full block">
+            <ImageContainer src="/assets/logo/main-logo-white.png" width="auto" height="100%" alt="" />
           </a>
         </div>
       </div>

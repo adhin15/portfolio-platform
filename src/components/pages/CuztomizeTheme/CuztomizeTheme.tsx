@@ -43,24 +43,17 @@ const CuztomizeTheme = () => {
           // borderTop: "2px",
         }}
       ></div>
-      <div className="min-h-[100vh] h-full w-full flex flex-wrap mt-8">
-        <div className="w-1/3 p-4">
-          <div className="flex mb-4">
-            <div className="w-1/2">
+      <div className="md:min-h-[100vh] h-full w-full flex flex-wrap mt-8">
+        <div className="w-full md:w-1/3 p-4">
+          <div className="flex mb-4 gap-4 md:flex-wrap">
+            <div className="w-1/2 flex-col gap-4">
               <h3 className="font-bold text-xl">Choose Color</h3>
-            </div>
-            <div className="w-1/2">
-              <h3 className="font-bold text-xl">Choose Template</h3>
-            </div>
-          </div>
-          <div className="flex">
-            <div className="w-1/2">
               <div className="flex flex-col gap-2">
                 {collection?.map((val: any, index: number) => {
                   return (
                     <div
                       key={index}
-                      className="flex flex-wrap w-fit justify-between items-center p-2 gap-2 cursor-pointer "
+                      className="flex w-fit justify-between items-center p-2 gap-2 cursor-pointer "
                       onClick={() => {
                         setColorList(collection[index]);
                       }}
@@ -86,7 +79,7 @@ const CuztomizeTheme = () => {
                           <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z" />
                         </svg>
                       </button>
-                      <div className="flex flex-wrap">
+                      <div className="flex ">
                         {val?.map((value: any, indexNum: number) => {
                           return (
                             <div key={indexNum} className={`w-[16px] h-[16px]`} style={{ background: value }}></div>
@@ -101,27 +94,30 @@ const CuztomizeTheme = () => {
                 </Button>
               </div>
             </div>
-            <div className="w-1/2">
-              <select
-                className="p-2 rounded-lg cursor-pointer"
-                style={{
-                  background: colorTheme?.main,
-                }}
-                onChange={(e) => {
-                  setTemplate(e.target.value);
-                }}
-                value={template}
-              >
-                <option value="" disabled>
-                  Choose One
-                </option>
-                <option value="dashboard">Dashboard</option>
-                <option value="landingPage">Landing Page</option>
-              </select>
+            <div className="w-1/2 flex flex-col gap-4">
+              <h3 className="font-bold text-xl">Choose Template</h3>
+              <div className="w-1/2 flex-col gap-4">
+                <select
+                  className="p-2 rounded-lg cursor-pointer"
+                  style={{
+                    background: colorTheme?.main,
+                  }}
+                  onChange={(e) => {
+                    setTemplate(e.target.value);
+                  }}
+                  value={template}
+                >
+                  <option value="" disabled>
+                    Choose One
+                  </option>
+                  <option value="dashboard">Dashboard</option>
+                  <option value="landingPage">Landing Page</option>
+                </select>
+              </div>
             </div>
           </div>
         </div>
-        <div className="w-2/3 ps-2">
+        <div className="w-full md:w-2/3 ps-2">
           <div className="p-2 relative w-[120%] origin-[0_0]" style={{ scale: 0.7 }}>
             {renderTemplate(template)}
           </div>

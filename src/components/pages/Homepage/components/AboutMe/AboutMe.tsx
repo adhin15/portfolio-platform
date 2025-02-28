@@ -1,4 +1,6 @@
 import { useAppContext } from "@/components/components/Layout/Context";
+import ImageContainer from "@/components/shared/ImageContainer/ImageContainer";
+import Image from "next/image";
 
 const AboutMe = () => {
   const contextValue = useAppContext();
@@ -15,8 +17,8 @@ const AboutMe = () => {
           About Me
         </h3>
         <div className="lg:w-1/3 w-full text-center p-4 ">
-          <div className="">
-            <img src="./assets/images/man-coding.png" className="h-[280px] m-auto object-cover" alt="" />
+          <div>
+            <ImageContainer src="/assets/images/man-coding.png" className="m-auto object-cover" height={280} alt="" />
             <div className="flex justify-center mt-4">
               <span
                 className="mx-2"
